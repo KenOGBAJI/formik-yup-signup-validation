@@ -43,7 +43,7 @@ const Signup = () => {
     location: Yup.string().min(3, "It's too short").required("Required"),
     email: Yup.string().email("Enter valid email").required("Required"),
     gender: Yup.string().oneOf(["male", "female"], "Requred"),
-    phoneNumber: Yup.string().required().matches(/^[0-9]+$/, "Must be only digits")
+    phoneNumber: Yup.string().required("Required").matches(/^[0-9]+$/, "Must be only digits")
     .min(11, 'Must be exactly 11 digits').max(11, 'Must be exactly 11 digits'),
     password: Yup.string().min(6, "Password minimum length should be 6").required("Required"),
     confirmPassword: Yup.string().oneOf([Yup.ref("password")], "Password not matched").required("Required"),
